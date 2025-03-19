@@ -13,11 +13,11 @@ jobs:
        - name: Setup JFrog CLI
          uses: jfrog/setup-jfrog-cli@v4
          env:  
-           JF_URL: 'https://mavengithubactions.jfrog.io'
-           JF_PROJECT: natalieb
+           JF_URL: 'http://localhost:55005'
+           JF_PROJECT: myproj
          with:
-           oidc-provider-name: natalieb-project  
-           oidc-audience: test
+           oidc-provider-name: test  
+           oidc-audience: natalieidmap
        - run: |
            jf rt ping
            export JFROG_CLI_LOG_LEVEL=DEBUG
