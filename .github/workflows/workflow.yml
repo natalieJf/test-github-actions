@@ -1,0 +1,25 @@
+name: "Download settings.xml"
+on: push
+
+# This is required as per
+# https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-cloud-providers#adding-permissions-settings
+permissions:
+  id-token: write
+
+jobs:
+  build:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Setup JFrog CLI
+         uses: jfrog/setup-jfrog-cli@v4
+         env:  
+           JF_URL: 'https://mavengithubactions.jfrog.io'
+           JF_PROJECT: natalieb
+         with:
+           oidc-provider-name: natalieb-project  
+           oidc-audience: test
+       - run: |
+           jf rt ping
+           export JFROG_CLI_LOG_LEVEL=DEBUG
+           jf rt dl --fail-no-op --skip-checksum maven-local/settings.xml settings.xml
+           cat settings.xml
