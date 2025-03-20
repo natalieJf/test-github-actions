@@ -11,7 +11,7 @@ jobs:
        - name: Setup JFrog CLI
          uses: jfrog/setup-jfrog-cli@v4
          env:
-           JF_URL: 'http://10.1.23.197:55005' 
+           JF_URL: 'https://mavengit.jfrogdev.org' 
            JF_PROJECT: myproj
          with:
            oidc-provider-name: test 
