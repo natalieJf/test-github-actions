@@ -12,7 +12,7 @@ jobs:
        - name: Setup JFrog CLI
          uses: jfrog/setup-jfrog-cli@v4
          env:
-           JF_URL: 'http://10.100.102.9:8082' 
+           JF_URL: 'https://mydomain.com' 
            JF_PROJECT: myproj
          with:
            oidc-provider-name: test 
