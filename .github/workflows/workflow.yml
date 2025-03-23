@@ -12,7 +12,7 @@ jobs:
        - name: Setup JFrog CLI
          uses: jfrog/setup-jfrog-cli@v4
          env:
-           JF_URL: 'https://oidcnatalie.jfrogdev.org' 
+           JF_URL: 'https://jatguthub.jfrtpt.org.org' 
            JF_PROJECT: myproj
          with:
            oidc-provider-name: test 
