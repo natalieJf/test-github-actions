@@ -12,7 +12,6 @@ jobs:
           uses: jfrog/setup-jfrog-cli@v4
           env:
             JF_URL: https://jatguthub.jfrtpt.org
-            JF_PROJECT: myproj
           with:
             oidc-provider-name: test 
         - run: |
