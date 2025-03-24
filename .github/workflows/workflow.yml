@@ -1,4 +1,3 @@
-
 name: "Download settings.xml"
 on: push
 # This is required as per
@@ -7,18 +6,18 @@ permissions:
   id-token: write
 jobs:
   build:
-     runs-on: ubuntu-latest
-     steps:
-       - name: Setup JFrog CLI
-         uses: jfrog/setup-jfrog-cli@v4
-         env:
-           JF_URL: 'https://jatguthub.jfrtpt.org' 
-           JF_PROJECT: myproj
-         with:
-           oidc-provider-name: test 
-           oidc-audience: test
-       - run: |
-           jf rt ping
-           export JFROG_CLI_LOG_LEVEL=DEBUG
-           jf rt dl --fail-no-op --skip-checksum maven-local/settings.xml settings.xml
-           cat settings.xml
+      runs-on: ubuntu-latest
+      steps:
+        - name: Setup JFrog CLI
+          uses: jfrog/setup-jfrog-cli@v4
+          env:
+            JF_URL: 'https://jatguthub.jfrtpt.org' 
+            JF_PROJECT: myproj
+          with:
+            oidc-provider-name: test 
+            oidc-audience: test
+        - run: |
+            jf rt ping
+            export JFROG_CLI_LOG_LEVEL=DEBUG
+            jf rt dl --fail-no-op --skip-checksum maven-local/settings.xml settings.xml
+            cat settings.xml
