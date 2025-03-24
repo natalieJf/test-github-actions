@@ -13,7 +13,8 @@ jobs:
           env:
             JF_URL: https://jatguthub.jfrtpt.org
           with:
-            oidc-provider-name: test 
+            oidc-provider-name: test
+            oidc-audience: test
         - run: |
             jf rt ping
             export JFROG_CLI_LOG_LEVEL=DEBUG
