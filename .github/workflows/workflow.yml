@@ -11,7 +11,7 @@ jobs:
         - name: Setup JFrog CLI
           uses: jfrog/setup-jfrog-cli@v4
           env:
-            JF_URL: ${{ vars.JF_URL }}
+            JF_URL: https://jatguthub.jfrtpt.org
             JF_PROJECT: myproj
           with:
             oidc-provider-name: test 
