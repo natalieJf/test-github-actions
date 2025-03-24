@@ -15,7 +15,6 @@ jobs:
             JF_PROJECT: myproj
           with:
             oidc-provider-name: test 
-            oidc-audience: test
         - run: |
             jf rt ping
             export JFROG_CLI_LOG_LEVEL=DEBUG
