@@ -21,5 +21,5 @@ jobs:
         - run: |
             jf rt ping
             export JFROG_CLI_LOG_LEVEL=DEBUG
-            jf rt dl --fail-no-op --skip-checksum maven-local/settings.xml settings.xml
+            jf rt dl --fail-no-op --skip-checksum maven-virtual/settings.xml settings.xml
             cat settings.xml
